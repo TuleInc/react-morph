@@ -94,8 +94,8 @@ class Morph extends Component {
     portalElement: propTypes.object,
     children: propTypes.func.isRequired,
     spring: propTypes.shape({
-      restDelta: 0.001,
-      restSpeed: 0.001,
+      restDelta: propTypes.number, //0.001,
+      restSpeed: propTypes.number, // 0.001,
       stiffness: propTypes.number.isRequired,
       mass: propTypes.number,
       damping: propTypes.number.isRequired,
@@ -105,6 +105,8 @@ class Morph extends Component {
   static defaultProps = {
     portalElement: global.document && global.document.body,
     spring: {
+      restDelta: 0.001,
+      restSpeed: 0.001,
       damping: 26,
       mass: 1,
       stiffness: 170,
